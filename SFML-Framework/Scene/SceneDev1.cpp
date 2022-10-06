@@ -5,12 +5,16 @@
 #include "../GameObject/SpriteObj.h"
 #include "../GameObject/TextObject.h"
 #include "../Framework/SoundMgr.h"
+#include "../GameObject/Player.h"
 
 SceneDev1::SceneDev1()
 	:Scene(Scenes::Dev1)
 {
-	SpriteObj* obj = new SpriteObj();
+	Player* obj = new Player();
 	obj->SetTexture(*RESOURCE_MGR->GetTexture("graphics/player3.png"));
+	obj->SetPos({ 1280 * 0.5f, 720 * 0.5f });
+	obj->SetOrigin(Origins::MC);
+	obj->SetActive(true);
 	objList.push_back(obj);
 
 	TextObject* ui1 = new TextObject();

@@ -10,9 +10,13 @@ public:
 	virtual ~SpriteObj();
 
 	virtual void Init() override;
+	virtual void Release() override {};
 	virtual void Update(float dt) override;
 	virtual void Draw(RenderWindow& window) override;
 
-	void SetTexture(Texture& tex);
+	virtual void SetOrigin(Origins origin);
+	virtual void SetRotation(float rotate);
+
+	virtual void SetTexture(Texture& tex);
 };
 
